@@ -1,5 +1,7 @@
 <?php
 
+// zorra 
+
 //setear las variables con los valores iniiales 
 
 $valor = '';
