@@ -1,6 +1,6 @@
 <?php
 
-// zorra  revisa porfa y me dices que se puede mejorar
+// zorra  revisa porfa y me dices que se puede mejorar, jajaja
 
 //setear las variables con los valores iniiales 
 
