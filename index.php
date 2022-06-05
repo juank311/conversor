@@ -24,7 +24,7 @@ function convertir_desde($valor, $desde){
              case 'Decimetros':
                 return $valor/10;
                 break;
-             case 'Metro':
+             case 'Metros':
                 return $valor*1;
                 break;
              case 'Decametros':
@@ -121,35 +121,66 @@ $resultado_2 = convertir_hasta($resultado_1, $hasta);
                 <div class="col-sm-4">
                     <div class="mb-3">
                         <label for="valor" class="form-label">VALOR:</label>
-                        <input type="number" class="form-control" name = "valor">                
+                        <input placeholder = "Ingrese el valor a convertir" type="number" class="form-control" name = "valor"  value = "<?php if (isset($_POST['valor'])) {
+                            echo $_POST['valor'];
+                        }?>">                
                     </div>
                 </div>
            
                 <div class="col-sm-4">
                     <label for="desde" class= "form-label">DESDE</label>
-                    <select class="form-select" name = "desde">    
-                        <option value="">--Selecciona un valor--</option>                       
-                        <option value="Milimetros">Milímetro</option>
-                        <option value="Centimetros">Centímetro</option>
-                        <option value="Decimetros">Decímetro</option>
-                        <option value="Metros">Metro</option>
-                        <option value="Decametros">Decámetro</option>
-                        <option value="Hectometros">Hectómetro</option>
-                        <option value="Kilometros">Kilómetro</option>
+                    <select class="form-select" name = "desde" >    
+                        <option value="">--Selecciona un valor--</option> 
+
+                        <option value="Milimetros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Milimetros") {
+                            echo 'selected'; }?>>Milimetros</option>
+
+                        <option value="Centimetros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Centimetros") {
+                            echo 'selected'; }?>>Centimetros</option>
+
+                        <option value="Decimetros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Decimetros") {
+                            echo 'selected'; }?>>Decimetros</option>
+
+                        <option value="Metros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Metros") {
+                            echo 'selected'; }?>>Metros</option>
+
+                        <option value="Decametros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Decametros") {
+                            echo 'selected'; }?>>Decametros</option>
+
+                        <option value="Hectometros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Hectometros") {
+                            echo 'selected'; }?>>Hectometros</option>
+
+                        <option value="Kilometros" <?php if (isset($_POST['desde']) && $_POST['desde'] == "Kilometros") {
+                            echo 'selected'; }?>>Kilometros</option>
                     </select>
                 </div>
 
                 <div class="col-sm-4">
                     <label for="hasta" class= "form-label">HASTA</label>
                     <select class="form-select" name = "hasta">
-                        <option value="">--Selecciona un valor--</option>  
-                        <option value="Milimetros">Milímetro</option>
-                        <option value="Centimetros">Centímetro</option>
-                        <option value="Decimetros">Decímetro</option>
-                        <option value="Metros">Metro</option>
-                        <option value="Decametros">Decámetro</option>
-                        <option value="Hectometros">Hectómetro</option>
-                        <option value="Kilometros">Kilómetro</option>
+                        
+                        <option value="">--Selecciona un valor--</option> 
+
+                        <option value="Milimetros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Milimetros") {
+                            echo 'selected'; }?>>Milimetros</option>
+
+                        <option value="Centimetros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Centimetros") {
+                            echo 'selected'; }?>>Centimetros</option>
+
+                        <option value="Decimetros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Decimetros") {
+                            echo 'selected'; }?>>Decimetros</option>
+
+                        <option value="Metros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Metros") {
+                            echo 'selected'; }?>>Metros</option>
+
+                        <option value="Decametros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Decametros") {
+                            echo 'selected'; }?>>Decametros</option>
+
+                        <option value="Hectometros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Hectometros") {
+                            echo 'selected'; }?>>Hectometros</option>
+
+                        <option value="Kilometros" <?php if (isset($_POST['hasta']) && $_POST['hasta'] == "Kilometros") {
+                            echo 'selected'; }?>>Kilometros</option>
                     </select>              
                 </div>
            
