@@ -15,25 +15,25 @@ function convertir_desde($valor, $desde){
 
     if (isset($_POST['convertir'])) {
         switch ($_POST['desde']) {
-            case 'Milimetro':
+            case 'Milimetros':
                 return $valor/1000;
                 break;
-            case 'Centimetro':
+            case 'Centimetros':
                 return $valor/100;
                 break;
-             case 'Decimetro':
+             case 'Decimetros':
                 return $valor/10;
                 break;
              case 'Metro':
                 return $valor*1;
                 break;
-             case 'Decametro':
+             case 'Decametros':
                 return $valor*10;
                 break;
-            case 'Hectometro':
+            case 'Hectometros':
                 return $valor*100;
                 break;
-            case 'Kilometro':
+            case 'Kilometros':
                 return $valor*1000;
                 break;
            
@@ -46,57 +46,56 @@ function convertir_desde($valor, $desde){
     }
 };
 
-if (isset($_POST['valor']) && isset($_POST['desde'])) {
-    $valor = $_POST['valor'];
-    $desde = $_POST['desde'];
-};
-//Resultado de la funcion 1
-$resultado_1 = convertir_desde($valor, $desde);
-
-
 //Declaracion de la funcion 2 (HASTA) a metros como funcion po defecto 
 function convertir_hasta($resultado_1, $hasta){
 
-   if (isset($resultado_1)) {
-       switch ($_POST['hasta']) {
-            case 'Milimetro':
-                return $resultado_1*1000;
-                break;
-            case 'Centimetro':
-                return $resultado_1*100;
-                break;
-             case 'Decimetro':
-                return $resultado_1*10;
-                break;
-             case 'Metro':
-                return $resultado_1*1;
-                break;
-             case 'Decametro':
-                return $resultado_1/10;
-                break;
-            case 'Hectometro':
-                return $resultado_1/100;
-                break;
-            case 'Kilometro':
-                return $resultado_1/1000;
-                break;
-           
-            default:
+    if (isset($resultado_1)) {
+        switch ($_POST['hasta']) {
+             case 'Milimetros':
+                 return $resultado_1*1000;
+                 break;
+             case 'Centimetros':
+                 return $resultado_1*100;
+                 break;
+              case 'Decimetros':
+                 return $resultado_1*10;
+                 break;
+              case 'Metros':
+                 return $resultado_1*1;
+                 break;
+              case 'Decametros':
+                 return $resultado_1/10;
+                 break;
+             case 'Hectometros':
+                 return $resultado_1/100;
+                 break;
+             case 'Kilometros':
+                 return $resultado_1/1000;
+                 break;
+            
+             default:
+ 
+                 echo "Conversion no soportada";
+ 
+                 break;
+         } 
+     };
+ };
 
-                echo "Conversion no soportada";
-
-                break;
-        } 
-    };
-};
-
-if (isset($_POST['hasta'])) {
+if (isset($_POST['valor']) && isset($_POST['desde']) && isset($_POST['hasta'])) {
+    $valor = $_POST['valor'];
+    $desde = $_POST['desde'];
     $hasta = $_POST['hasta'];
+
 };
 
+//Resultado de la funcion 1
+$resultado_1 = convertir_desde($valor, $desde);
+
+//Resultado de la funcion 2
 $resultado_2 = convertir_hasta($resultado_1, $hasta);
  
-
+//echo $resultado_2;
 ?>
 
 
@@ -119,55 +118,57 @@ $resultado_2 = convertir_hasta($resultado_1, $hasta);
         <form  method = "POST" action="<?php $_SERVER['PHP_SELF'];?>"> 
             <div class= "row mt-4">
 
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="mb-3">
                         <label for="valor" class="form-label">VALOR:</label>
                         <input type="number" class="form-control" name = "valor">                
                     </div>
                 </div>
            
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <label for="desde" class= "form-label">DESDE</label>
                     <select class="form-select" name = "desde">    
                         <option value="">--Selecciona un valor--</option>                       
-                        <option value="Milimetro">Milímetro</option>
-                        <option value="Centimetro">Centímetro</option>
-                        <option value="Decimetro">Decímetro</option>
-                        <option value="Metro">Metro</option>
-                        <option value="Decametro">Decámetro</option>
-                        <option value="Hectometro">Hectómetro</option>
-                        <option value="Kilometro">Kilómetro</option>
+                        <option value="Milimetros">Milímetro</option>
+                        <option value="Centimetros">Centímetro</option>
+                        <option value="Decimetros">Decímetro</option>
+                        <option value="Metros">Metro</option>
+                        <option value="Decametros">Decámetro</option>
+                        <option value="Hectometros">Hectómetro</option>
+                        <option value="Kilometros">Kilómetro</option>
                     </select>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <label for="hasta" class= "form-label">HASTA</label>
                     <select class="form-select" name = "hasta">
                         <option value="">--Selecciona un valor--</option>  
-                        <option value="Milimetro">Milímetro</option>
-                        <option value="Centimetro">Centímetro</option>
-                        <option value="Decimetro">Decímetro</option>
-                        <option value="Metro">Metro</option>
-                        <option value="Decametro">Decámetro</option>
-                        <option value="Hectometro">Hectómetro</option>
-                        <option value="Kilometro">Kilómetro</option>
+                        <option value="Milimetros">Milímetro</option>
+                        <option value="Centimetros">Centímetro</option>
+                        <option value="Decimetros">Decímetro</option>
+                        <option value="Metros">Metro</option>
+                        <option value="Decametros">Decámetro</option>
+                        <option value="Hectometros">Hectómetro</option>
+                        <option value="Kilometros">Kilómetro</option>
                     </select>              
                 </div>
            
             </div>  
 
                     <div class="row mt-4">
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                              <button type="submit" class="btn btn-primary w-100 py-4" name= "convertir">CONVERTIR</button>
                         </div>
                 
-                            <div class="col-sm-6">
-                                 <div class="mb-3">
-                                    <label for="resultado" class="form-label">RESULTADO:</label>
-                                    <input type="text" class="form-control" name = "resultado" value = "
-                                        <?php echo $resultado_2; ?>">                
+                            <div class="col-sm-7">
+                                 <div class="mb-1" >
+                                    <label for="resultado" class="form-label"><b>RESULTADO:<b></label>
+                                    <input  type="text" class="form-control" name = "resultado" value = "
+                                        <?php if (isset($resultado_1)) {
+                                            echo "Es: " . $resultado_2 ."  ". $hasta;
+                                        } ?>">                
                                 </div>
-                            </div>
+                            </div> 
                     </div> 
 
         </form>     
