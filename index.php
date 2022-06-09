@@ -194,12 +194,17 @@ $resultado_2 = convertir_hasta($resultado_1, $hasta);
                             <div class="col-sm-7">
                                  <div class="mb-1" >
                                     <label for="resultado" class="form-label"><b>RESULTADO:<b></label>
-                                    <input  type="text" class="form-control" name = "resultado" value = "
-                                        <?php if (isset($resultado_1)) {
+                                    <input  type="text" class="form-control" name = "resultado" value="<?php 
+                                        if (isset($resultado_1)) {
                                             echo "Es: " . $resultado_2 ."  ". $hasta;
                                         } ?>">                
                                 </div>
                             </div> 
+                    </div>
+                      <div class="row mt-4">
+                        <div class="col-sm-4">
+                         <a href="index.php" class="btn btn-primary w-100 py-4"> <b>NUEVA CONVERSION</b></a>
+                      </div>            
                     </div> 
 
         </form>     
